@@ -8,11 +8,18 @@ R1:
       subnet_mask: 255.255.255.0
       description: "Link to R2 - Updated via DevOps"
       enabled: true
-      
+
     - name: FastEthernet1/0
       ip_address: 10.0.0.100
       subnet_mask: 255.255.255.0
       description: "Management Interface"
+      enabled: true
+
+    # 🆕 NEW: Server Network for Head Office
+    - name: FastEthernet2/0
+      ip_address: 172.16.100.1
+      subnet_mask: 255.255.255.0
+      description: "Server Farm Network - Added by Network Team"
       enabled: true
 
 R2:
@@ -22,7 +29,7 @@ R2:
       subnet_mask: 255.255.255.0
       description: "Link to R1"
       enabled: true
-      
+
     - name: FastEthernet1/0
       ip_address: 192.168.23.2
       subnet_mask: 255.255.255.0
@@ -36,7 +43,7 @@ R3:
       subnet_mask: 255.255.255.0
       description: "Link to R2"
       enabled: true
-      
+
     - name: FastEthernet1/0
       ip_address: 10.0.0.103
       subnet_mask: 255.255.255.0

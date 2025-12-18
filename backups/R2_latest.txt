@@ -1,4 +1,4 @@
-! Backup Date: 2025-12-18 10:43:10
+! Backup Date: 2025-12-18 11:07:44
 ! Router: R2
 ! IP Address: localhost
 ! Cisco IOS Software, 7200 Software (C7200-ADVENTERPRISEK9-M), Version 12.4(24)T5, RELEASE SOFTWARE (fc3)
@@ -9,7 +9,7 @@ BOOTLDR: 7200 Software (C7200-ADVENTERPRISEK9-M), Version 12.4(24)T5, RELEASE SO
 !
 Building configuration...
 
-Current configuration : 1391 bytes
+Current configuration : 1554 bytes
 !
 upgrade fpd auto
 version 12.4
@@ -70,12 +70,20 @@ ip ssh version 2
 !
 !
 interface FastEthernet0/0
+ description Link to R1
  ip address 192.168.12.2 255.255.255.0
  duplex half
 !
 interface FastEthernet1/0
+ description Link to R3
  ip address 192.168.23.2 255.255.255.0
  duplex half
+!
+router eigrp 100
+ network 10.1.12.0 0.0.0.255
+ network 10.2.23.0 0.0.0.255
+ network 192.168.1.0
+ no auto-summary
 !
 router ospf 1
  router-id 2.2.2.2
