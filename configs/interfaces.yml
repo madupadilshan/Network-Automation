@@ -6,7 +6,7 @@ R1:
     - name: FastEthernet0/0
       ip_address: 192.168.12.1
       subnet_mask: 255.255.255.0
-      description: "Link to R2"
+      description: "Link to R2 - Updated via DevOps"
       enabled: true
       
     - name: FastEthernet1/0
