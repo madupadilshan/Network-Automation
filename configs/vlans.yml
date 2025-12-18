@@ -1,0 +1,60 @@
+# VLAN Configuration
+# Note: This is more relevant for switches, but can be used for router subinterfaces
+
+vlans:
+  - id: 10
+    name: MANAGEMENT
+    description: "Management VLAN"
+
+  - id: 20
+    name: DATA
+    description: "Data VLAN"
+
+  - id: 30
+    name: VOICE
+    description: "Voice VLAN"
+
+  - id: 99
+    name: NATIVE
+    description: "Native VLAN"
+
+# Router Subinterface Configuration (for VLAN trunking)
+router_subinterfaces:
+  R1:
+    - interface: GigabitEthernet0/3.10
+      vlan: 10
+      ip_address: 10.10.10.1
+      subnet_mask: 255.255.255.0
+      description: "Management VLAN"
+
+    - interface: GigabitEthernet0/3.20
+      vlan: 20
+      ip_address: 10.10.20.1
+      subnet_mask: 255.255.255.0
+      description: "Data VLAN"
+
+  R2:
+    - interface: GigabitEthernet0/3.10
+      vlan: 10
+      ip_address: 10.10.10.2
+      subnet_mask: 255.255.255.0
+      description: "Management VLAN"
+
+    - interface: GigabitEthernet0/3.30
+      vlan: 30
+      ip_address: 10.10.30.2
+      subnet_mask: 255.255.255.0
+      description: "Voice VLAN"
+
+  R3:
+    - interface: GigabitEthernet0/3.20
+      vlan: 20
+      ip_address: 10.10.20.3
+      subnet_mask: 255.255.255.0
+      description: "Data VLAN"
+
+    - interface: GigabitEthernet0/3.30
+      vlan: 30
+      ip_address: 10.10.30.3
+      subnet_mask: 255.255.255.0
+      description: "Voice VLAN"

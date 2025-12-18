@@ -1,0 +1,24 @@
+# Python Dependencies for DevNetOps GNS3 Automation
+
+# Network automation
+netmiko==4.3.0
+paramiko==3.4.0
+
+# Configuration management
+pyyaml==6.0.1
+jinja2==3.1.2
+
+# Environment variables
+python-dotenv==1.0.0
+
+# Logging and utilities
+colorama==0.4.6
+tabulate==0.9.0
+
+# Optional: Ansible for more complex automation
+# ansible==9.0.1
+# ansible-pylibssh==1.1.0
+
+# Testing (optional)
+# pytest==7.4.3
+# pytest-mock==3.12.0

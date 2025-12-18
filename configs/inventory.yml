@@ -1,0 +1,29 @@
+# Router Inventory for GNS3 Lab
+# Update IP addresses to match your GNS3 topology
+
+routers:
+  - name: R1
+    hostname: R1
+    ip: localhost
+    device_type: cisco_ios_telnet
+    port: 5003
+    description: "Router 1 - Core"
+    
+  - name: R2
+    hostname: R2
+    ip: localhost
+    device_type: cisco_ios_telnet
+    port: 5004
+    description: "Router 2 - Distribution"
+    
+  - name: R3
+    hostname: R3
+    ip: localhost
+    device_type: cisco_ios_telnet
+    port: 5005
+global:
+  domain: lab.local
+  ntp_server: 192.168.1.100
+  dns_servers:
+    - 8.8.8.8
+    - 8.8.4.4
