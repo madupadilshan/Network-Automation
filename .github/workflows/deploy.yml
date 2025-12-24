@@ -8,7 +8,6 @@ on:
     paths:
       - 'configs/**'
       - 'scripts/**'
-      - '.github/workflows/deploy.yml'
 
   pull_request:
     branches:
